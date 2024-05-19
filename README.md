@@ -1,4 +1,4 @@
-# Data Compression Techniques
+# HCH Compressor
 
 This repository contains an image compressor (and decompressor) which use various data compression techniques including Huffman Coding, Chroma Subsampling, and Haar Wavelet Transformation. It also covers metrics used to assess the quality of compressed images, specifically Mean Squared Error (MSE) and Peak Signal-to-Noise Ratio (PSNR).
 
