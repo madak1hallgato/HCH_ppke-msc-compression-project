@@ -35,6 +35,10 @@ Huffman coding is a popular algorithm for lossless data compression. It is parti
 6. **Decode the Data**:
    Traverse the Huffman tree using the binary codes to reconstruct the original data.
 
+<p align="center">
+   <img src="figures/huff_pipeline.png" width="100%" />
+</p>
+
 ## Chroma Subsampling
 
 ### Introduction
