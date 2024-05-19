@@ -60,6 +60,10 @@ Chroma subsampling helps in reducing the file size of images without significant
 4. **Convert Back to RGB**:
    Convert the image back from YUV to RGB color space.
 
+<p align="center">
+   <img src="figures/chroma_sub.png" width="100%" />
+</p>
+
 ## Haar Wavelet
 
 ### Introduction
@@ -82,6 +86,10 @@ The Haar wavelet transform is a mathematical tool used for signal processing, pa
 4. **Decode the Image**:
    - **Inverse Transform**: Apply the inverse Haar wavelet transform to the encoded channels to reconstruct the original image channels using the inverse of the transformation matrix.
    - **Merge Channels**: Merge the decoded channels back together to form the full-color image.
+
+<p align="center">
+   <img src="figures/hw_transformation.png" width="100%" />
+</p>
 
 ## Measures
 
