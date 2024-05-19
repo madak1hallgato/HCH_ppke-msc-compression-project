@@ -118,3 +118,39 @@ $$\text{PSNR} = 20 \log_{10} \left( \frac{\text{MAX}_I}{\sqrt{\text{MSE}}} \righ
 Where:
 - $\text{MSE}$ is the Mean Squared Error
 - $\text{MAX}_I\$ is the maximum possible pixel value of the image (e.g., 255 for an 8-bit image)
+
+## How To Run
+
+This section provides instructions on how to run the HCH compressor script and specifies the dependencies required.
+
+### Dependencies
+
+Before running the HCH compressor, ensure you have the following dependencies installed:
+
+- Python 3.9
+- NumPy 1.26.0
+- OpenCV 4.9.0
+- Matplotlib 3.8.4
+- Bitarray 2.5.1
+
+### Run HCH Compressor
+
+To run the HCH compressor script, follow these steps:
+
+1. **Navigate to the project directory**:
+
+```shell script
+cd /path/to/project
+```
+2. **Execute the script**:
+
+```shell script
+python madak1_compressor.py --huff --haar --yuv420 --img <image_path>
+```
+
+Arguments:
+ - huff: Use Huffman coding for compression (boolean)
+ - haar: Use Haar wavelet transformation for compression (boolean)
+ - yuv420: Use YUV 4:2:0 chroma subsampling for compression (boolean)
+ - img: Path to the input image file
+ 
