@@ -39,7 +39,29 @@ class HaarWaveletCompressor:
 
 from matplotlib import pyplot as plt
 
-def haar_wavelet_test():
+def haar_gimage_test():
+    compressor = HaarWaveletCompressor()
+    data = np.array([[0, 17, 34, 51], [68, 85, 102, 119], [136, 153, 170, 187], [204, 221, 238, 255]])
+    #data = np.random.randint(0, 256, (4, 4))
+    data = compressor.preprocess_image(img=data)
+    trans_matrix = compressor.get_transformation_matrix(k=int(math.log2(len(data))))
+    encoded = compressor.encode(img=data, t_matrix=trans_matrix)
+    decoded = compressor.decode(img=encoded, t_matrix=trans_matrix)
+    plt.subplot(1,3,1)
+    plt.imshow(cv2.cvtColor(data.clip(0, 255).astype(np.uint8), cv2.COLOR_BGR2RGB))
+    plt.title("Original") 
+    plt.axis('off')
+    plt.subplot(1,3,2)
+    plt.imshow(cv2.cvtColor((encoded-np.min(encoded)).clip(0, 255).astype(np.uint8), cv2.COLOR_BGR2RGB))
+    plt.title("Encoded (shifted)")
+    plt.axis('off')
+    plt.subplot(1,3,3)
+    plt.imshow(cv2.cvtColor(decoded.clip(0, 255).astype(np.uint8), cv2.COLOR_BGR2RGB))
+    plt.title("Decoded")
+    plt.axis('off')
+    plt.show()
+
+def haar_cimage_test():
     compressor = HaarWaveletCompressor()
     original_img = cv2.imread("images/test_cat.png")
     b_channel, g_channel, r_channel = cv2.split(original_img)
@@ -67,4 +89,6 @@ def haar_wavelet_test():
     plt.show()
 
 if __name__ == "__main__":
-    haar_wavelet_test()
+    haar_gimage_test()
+    haar_cimage_test()
+    
