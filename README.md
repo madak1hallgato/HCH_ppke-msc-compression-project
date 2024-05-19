@@ -153,4 +153,28 @@ Arguments:
  - haar: Use Haar wavelet transformation for compression (boolean)
  - yuv420: Use YUV 4:2:0 chroma subsampling for compression (boolean)
  - img: Path to the input image file
+
+## Results
+
+Below are some results demonstrating the performance on the test_cat:
+
+|YUV 4:2:0|Haar Wavelet|Huffman||MSE|PSNR|Original (bytes)|Encoded (bytes)|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|||||||||
+| | | ||0.00|inf|515024|698291|
+|x| | ||3.12|43.19|515024|297658|
+| |x| ||8.02|39.09|515024|755679|
+| | |x||0.00|inf|515024|1463493|
+|x|x| ||20.76|34.96|515024|323690|
+|x| |x||3.12|43.19|515024|631410|
+| |x|x||8.02|39.09|515024|721621|
+|x|x|x||20.76|34.96|515024|280991|
+
+## Conclusion
+
+While the results demonstrate promising compression performance for the provided example, it's important to note that in other scenarios, the results may not be as favorable. Therefore, there's a need for further optimization in the compression process.
+
+In the future, it would be beneficial to optimize the data storage method for Huffman codes. Utilizing a more efficient representation such as bit arrays for the Huffman codes, instead of NumPy arrays in a dictionary, can lead to better memory utilization and potentially enhance overall compression efficiency.
+
+
  
