@@ -2,6 +2,10 @@
 
 This repository contains an image compressor (and decompressor) which use various data compression techniques including Huffman Coding, Chroma Subsampling, and Haar Wavelet Transformation. It also covers metrics used to assess the quality of compressed images, specifically Mean Squared Error (MSE) and Peak Signal-to-Noise Ratio (PSNR).
 
+<p align="center">
+   <img src="figures/pipeline.png" width="100%" />
+</p>
+
 ## Huffman Coding
 
 ### Introduction
